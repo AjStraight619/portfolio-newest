@@ -1,6 +1,6 @@
 # Alex Straight's Portfolio
 
-This is a portfolio project built with [Next.js](https://nextjs.org/) using TypeScript. The project showcases Alex Straight's skills and projects in front-end and back-end development. It incorporates several modern tools and libraries to create a dynamic and interactive experience.
+This is a portfolio project built with [Next.js](https://nextjs.org/) using TypeScript.
 
 ## Technologies Used
 
