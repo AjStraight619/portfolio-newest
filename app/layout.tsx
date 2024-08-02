@@ -5,7 +5,7 @@ import './globals.css';
 import { ModeToggle } from '@/components/mode-toggle';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
-import { HomeIcon, MessageCircleIcon, UserIcon } from 'lucide-react';
+import { HomeIcon, MessageCircleIcon, UserIcon, Code2Icon } from 'lucide-react';
 import { FloatingNav } from '@/components/ui/floating-navbar';
 
 const jetBrains = JetBrains_Mono({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <body className={cn('bg-background font-primary', jetBrains.variable)}>
         <ThemeProvider
           attribute="class"
@@ -49,9 +49,14 @@ const navItems = [
     icon: <HomeIcon className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
+    name: 'About',
+    link: '#about',
+    icon: <UserIcon className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
     name: 'Projects',
     link: '#projects',
-    icon: <UserIcon className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    icon: <Code2Icon className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
     name: 'Contact',

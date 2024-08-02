@@ -3,14 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import SectionHeading from './ui/section-heading';
 import Image from 'next/image';
 import { StickyScroll } from './ui/sticky-scroll-reveal';
-// import {
-//   Carousel,
-//   CarouselApi,
-//   CarouselContent,
-//   CarouselItem,
-//   CarouselNext,
-//   CarouselPrevious,
-// } from './ui/carousel';
+
 import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
@@ -156,10 +149,6 @@ const projects = [
 ];
 
 const Projects = () => {
-  //   const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -174,63 +163,9 @@ const Projects = () => {
     };
   }, []);
 
-  //   const controls = useAnimationControls();
+  const controls = useAnimationControls();
 
-  //   useEffect(() => {
-  //     console.log('useEffect running');
-  //     if (!api || !controls) {
-  //       console.log('API is not yet available');
-  //       return;
-  //     }
-
-  //     console.log('API available:', api);
-
-  //     const snapList = api.scrollSnapList();
-  //     console.log('Scroll Snap List:', snapList);
-  //     setCount(snapList.length);
-  //     console.log('Snap List Count:', snapList.length);
-
-  //     const selectedSnap = api.selectedScrollSnap();
-  //     console.log('Selected Scroll Snap:', selectedSnap);
-  //     setCurrent(selectedSnap + 1);
-  //     console.log('Current Slide:', selectedSnap + 1);
-
-  //     const handleSelect = () => {
-  //       controls.start({
-  //         y: [-20, 0],
-  //         opacity: [0, 1],
-  //         transition: {
-  //           duration: 0.5,
-  //           delay: 0.2,
-  //         },
-  //       });
-  //       const newSelectedSnap = api.selectedScrollSnap();
-  //       console.log('Slide Selected:', newSelectedSnap + 1);
-  //       setCurrent(newSelectedSnap + 1);
-  //     };
-
-  //     const handleSlideChange = () => {
-  //       console.log('Slide changed');
-  //     };
-
-  //     const handleSlideFocus = () => {
-  //       console.log('slide focused');
-  //     };
-  //     const handleSettle = () => {
-  //       console.log('Settle fired');
-  //     };
-  //     api.on('select', handleSelect);
-  //     api.on('slidesChanged', handleSlideChange);
-  //     api.on('slideFocus', handleSlideFocus);
-  //     api.on('settle', handleSettle);
-
-  //     return () => {
-  //       api.off('select', handleSelect);
-  //       api.off('slidesChanged', handleSlideChange);
-  //       api.off('slideFocus', handleSlideFocus);
-  //       api.off('settle', handleSettle);
-  //     };
-  //   }, [api, controls]);
+  const handleProjectChange = () => {};
 
   const renderIndicator = (
     clickHandler: (e: React.MouseEvent | React.KeyboardEvent) => void,
@@ -265,18 +200,35 @@ const Projects = () => {
       className="py-12 flex flex-col items-center justify-center w-full p-4"
     >
       <SectionHeading>
-        Some of my recent <span className="text-purple-300">Projects</span>
+        Some of my recent <span className="text-purple-300">Projects.</span>
       </SectionHeading>
+      <div className="my-8 flex flex-row items-center"></div>
       <div className="max-w-xl w-full">
         <Carousel
           renderIndicator={renderIndicator}
-          onChange={() => console.log('Item changed')}
+          onChange={() => handleProjectChange()}
         >
           {projects.map((proj, idx) => (
             <AnimatePresence key={idx}>
               <Card>
                 <CardHeader>
-                  <CardTitle>{proj.title}</CardTitle>
+                  <CardTitle>
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: -20,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 0.3,
+                        },
+                      }}
+                    >
+                      {proj.title}
+                    </motion.div>
+                  </CardTitle>
                   <CardDescription>{proj.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -291,42 +243,6 @@ const Projects = () => {
           ))}
         </Carousel>
       </div>
-
-      {/* <Carousel setApi={setApi} className="max-w-lg w-full">
-        <CarouselContent className="[scrollbar-width:none] w-full">
-          <AnimatePresence>
-            {projects.map((proj, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col w-full items-center justify-center h-full gap-y-2"
-              >
-                <motion.div
-                  key={`title-${idx}`}
-                  initial={{ opacity: 0 }}
-                  animate={controls}
-                  exit={{ opacity: 0, y: 20 }}
-                  className="sm:text-lg  text-xs"
-                >
-                  {proj.title}
-                </motion.div>
-                <CarouselItem key={`item-${idx}`}>
-                  <StickyScroll
-                    projectTitle={proj.title}
-                    projectDescription={proj.description}
-                    data={proj.content}
-                  />
-                </CarouselItem>
-              </div>
-            ))}
-          </AnimatePresence>
-        </CarouselContent>
-        {!isMobile && (
-          <>
-            <CarouselPrevious />
-            <CarouselNext />
-          </>
-        )}
-      </Carousel> */}
     </section>
   );
 };
