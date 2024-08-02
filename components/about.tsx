@@ -1,6 +1,5 @@
 'use client';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-
 import {
   motion,
   useInView,
@@ -21,13 +20,20 @@ import {
 import { EvervaultCard } from './ui/evervault-card';
 import { tech } from '@/lib/constants';
 import SectionHeading from './ui/section-heading';
+import { useMobile } from '@/hooks/useMobile';
 
 const TechStack = () => {
   const [isHovering, setIsHovering] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const isMobile = useMobile();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const container = {
     hidden: {
-      opacity: 0.5,
+      opacity: isMobile ? 1 : 0.5,
       y: 10,
     },
     animate: {
@@ -41,7 +47,7 @@ const TechStack = () => {
 
   const items = {
     hidden: {
-      opacity: 0.5,
+      opacity: isMobile ? 1 : 0.5,
       y: 10,
     },
     animate: {
@@ -49,11 +55,13 @@ const TechStack = () => {
       y: 0,
     },
   };
+
+  if (!isMounted) return null;
   return (
     <motion.div
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      className="w-full h-full"
+      className="w-full h-full min-h-[6rem]"
     >
       <motion.ul
         variants={container}
@@ -119,7 +127,7 @@ const items = [
   {
     title: 'Career Interests',
     description:
-      'My interests span various tech careers, continually growing as I learn more. Always willing to learn more.',
+      'My interests span various tech fields, evolving as I learn. I am always eager to expand my knowledge.',
     header: <CareerInterests />,
     className: 'md:col-span-2',
     icon: <IconBriefcase className="h-4 w-4 text-neutral-500" />,
@@ -135,7 +143,7 @@ const items = [
     title: 'San Diego State University',
     description: 'Bachelor of Science in Computer Science, Expected May 2025.',
     header: (
-      <EvervaultCard className="h-full max-h-[8rem]" text="4.0 Major GPA" />
+      <EvervaultCard className="sm:h-full h-[6rem]" text="4.0 Major GPA" />
     ),
     className: 'md:col-span-1',
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,

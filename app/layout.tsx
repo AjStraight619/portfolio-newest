@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      <body className={cn('bg-background font-primary', jetBrains.variable)}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn('bg-background', jetBrains.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -18,7 +18,7 @@ const Hero = () => {
       />
       <Intro />
       <TextGenerateEffect
-        className="text-center"
+        className="text-center p-2"
         words="Combining Creativity and Engineering Principles into Seamless User Experience."
       />
       <div className="flex flex-col items-center sm:flex-row gap-x-2 gap-y-3">
@@ -34,7 +34,7 @@ export default Hero;
 const Intro = () => {
   return (
     <div className="flex sm:flex-row flex-col items-center justify-center gap-4 w-full max-w-[40rem] p-2">
-      <div className="w-[150px] h-[150px] border animate-shimmer transition-colors bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] border-white rounded-full flex-shrink-0 sm:self-start self-center">
+      <div className="sm:w-[150px] sm:h-[150px] w-[90px] h-[90px] border animate-shimmer transition-colors bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] border-white rounded-full flex-shrink-0 sm:self-start self-center">
         <div className="relative h-full w-full rounded-full">
           <Image
             src="/photo.png"
@@ -42,6 +42,7 @@ const Intro = () => {
             fill
             priority
             quality={100}
+            sizes="(max-width: 640px) 90px, 150px"
             className="object-contain rounded-full z-10"
           />
         </div>

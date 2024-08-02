@@ -207,6 +207,7 @@ const Projects = () => {
         <Carousel
           renderIndicator={renderIndicator}
           onChange={() => handleProjectChange()}
+          showThumbs={false}
         >
           {projects.map((proj, idx) => (
             <AnimatePresence key={idx}>
