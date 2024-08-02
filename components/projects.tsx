@@ -195,19 +195,17 @@ const Projects = () => {
   };
 
   return (
-    <section
-      id="projects"
-      className="py-12 flex flex-col items-center justify-center w-full p-4"
-    >
+    <section id="projects" className="scroll-mt-6 mt-12 p-4">
       <SectionHeading>
         Some of my recent <span className="text-purple-300">Projects.</span>
       </SectionHeading>
-      <div className="my-8 flex flex-row items-center"></div>
       <div className="max-w-xl w-full">
         <Carousel
           renderIndicator={renderIndicator}
           onChange={() => handleProjectChange()}
-          showThumbs={false}
+          emulateTouch={true}
+          preventMovementUntilSwipeScrollTolerance={true}
+          swipeScrollTolerance={50}
         >
           {projects.map((proj, idx) => (
             <AnimatePresence key={idx}>

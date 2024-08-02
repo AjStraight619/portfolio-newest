@@ -99,7 +99,7 @@ const CareerInterests = () => {
 
 const About = () => {
   return (
-    <section id="about" className="py-12 scroll-mt-6 hover:scroll-mt-0">
+    <section id="about" className="scroll-mt-6 mt-12  hover:scroll-mt-0">
       <SectionHeading>
         About <span className="text-purple-300">Me.</span>
       </SectionHeading>
@@ -134,7 +134,7 @@ const items = [
   },
   {
     title: 'Tech Stack',
-    description: 'Some technolgies I am familiar with, some more than others.',
+    description: 'Technolgies I am familiar with, some more than others.',
     header: <TechStack />,
     className: 'md:col-span-1',
     icon: <IconCode className="h-4 w-4 text-neutral-500" />,
