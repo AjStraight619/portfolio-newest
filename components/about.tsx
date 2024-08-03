@@ -82,7 +82,7 @@ const TechStack = () => {
 const CareerInterests = () => {
   return (
     <div className="sm:h-full max-h-[10rem]">
-      <p className="text-balance">
+      <p className="text-balance p-4">
         My primary interest lies in front-end development, where I enjoy
         creating intuitive and dynamic user interfaces. However, as I have
         gained experience with Go, I have also developed a strong interest in
