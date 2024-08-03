@@ -99,7 +99,7 @@ const CareerInterests = () => {
 
 const About = () => {
   return (
-    <section id="about" className="scroll-mt-6 mt-12  hover:scroll-mt-0">
+    <section id="about" className="scroll-mt-6 mt-12 w-full hover:scroll-mt-0">
       <SectionHeading>
         About <span className="text-purple-300">Me.</span>
       </SectionHeading>

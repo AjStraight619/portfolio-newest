@@ -195,7 +195,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="scroll-mt-6 mt-12 p-4">
+    <section id="projects" className="scroll-mt-6 mt-12 p-4 w-full">
       <SectionHeading>
         Some of my recent <span className="text-purple-300">Projects.</span>
       </SectionHeading>

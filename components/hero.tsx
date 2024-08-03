@@ -11,7 +11,7 @@ import { Spotlight } from './ui/spotlight';
 
 const Hero = () => {
   return (
-    <HeroHighlight className="flex flex-col items-center justify-evenly h-full">
+    <HeroHighlight className="flex flex-col items-center justify-evenly w-full h-full">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-30"
         fill="white"
