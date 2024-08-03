@@ -1,17 +1,9 @@
 'use client';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import {
-  motion,
-  useInView,
-  useMotionValue,
-  useScroll,
-  useSpring,
-} from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import {
-  IconClipboardCopy,
-  IconFileBroken,
   IconSignature,
   IconTableColumn,
   IconCode,
