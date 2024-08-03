@@ -47,7 +47,7 @@ const Intro = () => {
           />
         </div>
       </div>
-      <p className="text-center text-balance text-sm sm:text-lg md:text-xl leading-relaxed ">
+      <p className="text-center text-balance text-sm sm:text-lg md:text-xl leading-relaxed font-medium">
         Hello, I am Alex, an aspiring full stack engineer. I have developed
         multiple projects using{' '}
         <span className="underline text-purple-300 underline-offset-2">
