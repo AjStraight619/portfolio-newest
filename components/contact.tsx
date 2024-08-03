@@ -17,7 +17,7 @@ import SubmitButton from './ui/submit-button';
 
 const Contact = () => {
   return (
-    <section id="contact" className="scroll-mt-6 mb-12 pb-6 mt-12 w-full">
+    <section id="contact" className="scroll-mt-6 mb-12 pb-6 mt-12">
       <SectionHeading>
         Contact <span className="text-purple-300">Me.</span>
       </SectionHeading>
