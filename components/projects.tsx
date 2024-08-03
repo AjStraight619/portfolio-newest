@@ -199,7 +199,7 @@ const Projects = () => {
       <SectionHeading>
         Some of my recent <span className="text-purple-300">Projects.</span>
       </SectionHeading>
-      <div className="max-w-xl w-full">
+      <div>
         <Carousel
           renderIndicator={renderIndicator}
           onChange={() => handleProjectChange()}

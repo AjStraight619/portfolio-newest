@@ -21,7 +21,7 @@ const Contact = () => {
       <SectionHeading>
         Contact <span className="text-purple-300">Me.</span>
       </SectionHeading>
-      <Card>
+      <Card className="max-w-lg mx-auto">
         <CardHeader>
           <CardTitle>Contact Me</CardTitle>
           <CardDescription>
