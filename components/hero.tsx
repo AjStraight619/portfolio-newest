@@ -96,7 +96,11 @@ const Socials = () => {
         size="icon"
         className="rounded-full hover:scale-105 transition-all duration-150 p-2"
       >
-        <a target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.linkedin.com/in/alex-straight-997464272/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaLinkedin className="size-8" />
         </a>
       </Button>
@@ -106,7 +110,11 @@ const Socials = () => {
         size="icon"
         className="rounded-full hover:scale-105 transition-all duration-150 p-2"
       >
-        <a target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/Ajstraight619"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaGithub className="size-8" />
         </a>
       </Button>
