@@ -6,7 +6,7 @@ import { StickyScroll } from './ui/sticky-scroll-reveal';
 
 import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import {
   Card,
@@ -195,7 +195,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="scroll-mt-6 mt-12 p-4">
+    <section id="projects" className="scroll-mt-6 mt-16 p-4">
       <SectionHeading>
         Some of my recent <span className="text-purple-300">Projects.</span>
       </SectionHeading>

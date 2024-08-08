@@ -5,7 +5,13 @@ import './globals.css';
 import { ModeToggle } from '@/components/mode-toggle';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
-import { HomeIcon, MessageCircleIcon, UserIcon, Code2Icon } from 'lucide-react';
+import {
+  HomeIcon,
+  MessageCircleIcon,
+  UserIcon,
+  Code2Icon,
+  BriefcaseBusiness,
+} from 'lucide-react';
 import { FloatingNav } from '@/components/ui/floating-navbar';
 
 const jetBrains = JetBrains_Mono({
@@ -53,6 +59,13 @@ const navItems = [
     name: 'About',
     link: '#about',
     icon: <UserIcon className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: 'Experience',
+    link: '#experience',
+    icon: (
+      <BriefcaseBusiness className="h-4 w-4 text-neutral-500 dark:text-white" />
+    ),
   },
   {
     name: 'Projects',

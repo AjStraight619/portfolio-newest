@@ -14,15 +14,6 @@ export const experiencesData = [
     date: '2021 - 2022',
   },
   {
-    title: 'Full-Stack Developer',
-    subtitle: 'Freelancer',
-    location: 'San Diego, CA',
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, and Prisma. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: '2022 - present',
-  },
-  {
     title: 'Research Assistant',
     subtitle: 'San Diego State University',
     location: 'San Diego, CA',
@@ -49,7 +40,7 @@ export const experiencesData = [
     description:
       'I am currently working as a frontend developer intern at AcademicAssist. I am reworking their landing page, and adding new features to their web app. I am using React, TypeScript, and Tailwind for this project.',
     icon: React.createElement(CgWorkAlt),
-    date: '2023 - present',
+    date: '2024',
   },
 
   {
@@ -59,9 +50,15 @@ export const experiencesData = [
     description:
       'Currently building a website for the Computer Science department at San Deigo State University. Implemented authentication with auth.js.',
     icon: React.createElement(CgWorkAlt),
-    date: '2023 - present',
+    date: '2024',
   },
   {
-    title: 'Free Lance ',
+    title: 'Freelance Full-Stack Engineer',
+    subtitle: 'Oak Outlet Plus',
+    location: 'San Diego, CA',
+    description:
+      'Built a website for the local company Oak Outlet Plus. Utilized a full-stack approach with React, Next.js, TypeScript, and Tailwind to deliver a robust and scalable web application.',
+    icon: React.createElement(FaReact),
+    date: '2024',
   },
-] as const;
+];
