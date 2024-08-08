@@ -62,3 +62,46 @@ export const experiencesData = [
     date: '2024',
   },
 ];
+
+export const projectsData = [
+  {
+    title: 'Pictionary',
+    subtitle: 'Still in development',
+    description:
+      'Multiplayer game inspired by Skribbl.io. Using Go for WebSocket communication with the client.',
+    tags: [
+      'TypeScript',
+      'Next.js',
+      'Go',
+      'Tailwind',
+      'Prisma',
+      'Framer Motion',
+      'Zod',
+    ],
+    imageUrl: '/pictionary.png',
+    href: 'https://pictionary-tan.vercel.app/',
+  },
+  {
+    title: 'Pathfinding Visualizer',
+    subtitle: 'Completed',
+    description: 'Visualize pathfinding algorithms.',
+    tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'],
+    imageUrl: '/pathfinding.png',
+    href: 'https://algo-visualizer-nine.vercel.app/',
+  },
+  {
+    title: 'Link Tree Clone',
+    subtitle: 'Still in development',
+    description: 'Link Tree Clone is a clone of the popular Link Tree website.',
+    tags: [
+      'TypeScript',
+      'Next.js',
+      'Postgres',
+      'Tailwind',
+      'Prisma',
+      'Framer Motion',
+    ],
+    imageUrl: '/link-tree-clone.png',
+    href: 'https://ltree-clone.vercel.app/',
+  },
+] as const;

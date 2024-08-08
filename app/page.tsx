@@ -3,7 +3,6 @@ import Contact from '@/components/contact';
 import Experience from '@/components/experience';
 import Hero from '@/components/hero';
 import Projects from '@/components/projects';
-import VerticalTimeline from '@/components/ui/vertical-timeline';
 
 export default function Home() {
   return (

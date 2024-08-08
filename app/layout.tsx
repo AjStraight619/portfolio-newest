@@ -33,7 +33,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="!scroll-smooth">
-      <body className={cn('bg-background', jetBrains.variable)}>
+      <body
+        className={cn(
+          'bg-background font-sans antialiased',
+          jetBrains.variable,
+        )}
+      >
+        {/* <div className="pointer-events-none absolute inset-x-0 transform-gpu overflow-hidden blur-3xl sm:-top-80 -z-50">
+          <div className="relative left-[calc(50%)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-purple-300 to-primary-muted opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] -z-50" />
+        </div> */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
