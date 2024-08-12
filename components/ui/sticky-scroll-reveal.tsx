@@ -105,7 +105,7 @@ export const StickyScroll = ({
         </div>
       </div>
       {data[activeCard].isImage ? (
-        <div className="hidden lg:block w-[450px] rounded-md sticky top-10">
+        <div className="hidden lg:block w-80 rounded-md sticky top-10">
           <AspectRatio ratio={16 / 9} className="bg-muted">
             {data[activeCard].content ?? null}
           </AspectRatio>

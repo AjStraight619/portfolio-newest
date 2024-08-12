@@ -97,7 +97,7 @@ const projects = [
         title: 'Customizable Grids',
         isImage: false,
         description:
-          'Create and modify grids with obstacles, start, and end points to see how different algorithms perform under various conditions.',
+          'Create and modify grids with obstacles, start, and end points to see how different algorithms perform under various conditions. Currently implementing auto-generatable mazes to enhance the complexity and challenge of pathfinding.',
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
             Customizable Grids

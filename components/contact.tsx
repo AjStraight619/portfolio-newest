@@ -11,7 +11,6 @@ import {
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { sendEmail } from '@/actions/email';
-import { Button } from './ui/button';
 import { SendIcon } from 'lucide-react';
 import SubmitButton from './ui/submit-button';
 
