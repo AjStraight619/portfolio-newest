@@ -29,7 +29,7 @@ const Contact = () => {
             <span>
               {' '}
               <a
-                className="text-purple-300 underline underline-offset-2"
+                className="text-purple-300 hover:underline underline-offset-2"
                 href="mailto:Ajstraight619@gmail.com"
               >
                 Ajstraight619@gmail.com

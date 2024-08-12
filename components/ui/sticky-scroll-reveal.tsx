@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 
 export const StickyScroll = ({
   data,
@@ -12,6 +13,7 @@ export const StickyScroll = ({
 }: {
   data: {
     title: string;
+    isImage: boolean;
     description: string;
     content?: React.ReactNode | any;
   }[];
@@ -102,15 +104,23 @@ export const StickyScroll = ({
           <div className="h-40" />
         </div>
       </div>
-      <div
-        style={{ background: backgroundGradient }}
-        className={cn(
-          'hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden',
-          contentClassName,
-        )}
-      >
-        {data[activeCard].content ?? null}
-      </div>
+      {data[activeCard].isImage ? (
+        <div className="hidden lg:block w-[450px] rounded-md sticky top-10">
+          <AspectRatio ratio={16 / 9} className="bg-muted">
+            {data[activeCard].content ?? null}
+          </AspectRatio>
+        </div>
+      ) : (
+        <div
+          style={{ background: backgroundGradient }}
+          className={cn(
+            'hidden lg:block h-60 w-80 rounded-md sticky top-10',
+            contentClassName,
+          )}
+        >
+          {data[activeCard].content ?? null}
+        </div>
+      )}
     </motion.div>
   );
 };

@@ -3,6 +3,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import SectionHeading from './ui/section-heading';
 import Image from 'next/image';
 import { StickyScroll } from './ui/sticky-scroll-reveal';
+import pathfinding from '@/assets/pathfinding.png';
+import pictionary from '@/assets/pictionary.png';
 
 import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
 
@@ -20,44 +22,52 @@ import {
 
 const projects = [
   {
-    title: 'Pictionary With Friends',
-    description: 'A multiplayer game inspired by Skribbl.io',
-    tech: ['TypeScript, Next'],
+    title: 'Pictionary',
+    description:
+      'A multiplayer game inspired by Skribbl.io. Developed using Go for WebSocket communication with the client.',
+    tech: [
+      'TypeScript',
+      'Next.js',
+      'Go',
+      'Tailwind',
+      'Prisma',
+      'Framer Motion',
+      'Zod',
+    ],
     content: [
       {
-        title: 'Collaborative Editing',
+        title: 'Real-Time Drawing',
+        isImage: true,
         description:
-          'Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.',
+          'Players can draw and guess in real-time, making the game interactive and engaging. The game uses WebSocket technology to ensure low-latency communication between players.',
+        content: (
+          <Image
+            src={pictionary}
+            className="rounded-md object-cover"
+            quality={100}
+            alt="Pictionary game screenshot"
+          />
+        ),
+      },
+      {
+        title: 'Dynamic Gameplay',
+        isImage: false,
+        description:
+          'The game dynamically adjusts the difficulty level and drawing prompts based on the number of players, ensuring a fun experience for everyone involved.',
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-            Collaborative Editing
+            Dynamic Gameplay
           </div>
         ),
       },
       {
-        title: 'Real time changes',
+        title: 'Leaderboard System',
+        isImage: false,
         description:
-          'See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.',
-        content: (
-          <div className="h-full w-full flex items-center justify-center text-white">
-            <Image
-              src="/pictionary.png"
-              width={300}
-              height={300}
-              className="h-full w-full object-cover"
-              alt="linear board demo"
-              quality={100}
-            />
-          </div>
-        ),
-      },
-      {
-        title: 'Version control',
-        description:
-          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+          'A real-time leaderboard keeps track of player scores, adding a competitive element to the game. Players can see their ranking and strive to be the top guesser or artist.',
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-            Version control
+            Leaderboard System
           </div>
         ),
       },
@@ -65,106 +75,115 @@ const projects = [
   },
   {
     title: 'Pathfinding Visualizer',
-    description: 'A multiplayer game inspired by Skribbl.io',
-    tech: ['TypeScript, Next'],
+    description:
+      'A tool to visualize and compare various pathfinding algorithms.',
+    tech: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'],
     content: [
       {
-        title: 'Collaborative Editing',
+        title: 'Algorithm Visualization',
+        isImage: true,
         description:
-          'Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.',
+          'Visualize popular pathfinding algorithms like A*, Dijkstra, and BFS. See how each algorithm finds the shortest path in a grid-based layout.',
+        content: (
+          <Image
+            src={pathfinding}
+            className="rounded-md object-cover"
+            quality={100}
+            alt="Pathfinding Visualizer screenshot"
+          />
+        ),
+      },
+      {
+        title: 'Customizable Grids',
+        isImage: false,
+        description:
+          'Create and modify grids with obstacles, start, and end points to see how different algorithms perform under various conditions.',
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-            Collaborative Editing
+            Customizable Grids
           </div>
         ),
       },
       {
-        title: 'Real time changes',
+        title: 'Interactive Demo',
+        isImage: false,
         description:
-          'See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.',
-        content: (
-          <div className="h-full w-full  flex items-center justify-center text-white">
-            <Image
-              src="/linear.webp"
-              width={300}
-              height={300}
-              className="h-full w-full object-cover"
-              alt="linear board demo"
-            />
-          </div>
-        ),
-      },
-      {
-        title: 'Version control',
-        description:
-          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+          'Interact with the visualizer by placing obstacles, changing start and end points, and watching the algorithms in action.',
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-            Version control
+            Interactive Demo
           </div>
         ),
       },
     ],
   },
-  {
-    title: 'Pictionary With Friends',
-    description: 'A multiplayer game inspired by Skribbl.io',
-    tech: ['TypeScript, Next'],
-    content: [
-      {
-        title: 'Collaborative Editing',
-        description:
-          'Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.',
-        content: (
-          <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-            Collaborative Editing
-          </div>
-        ),
-      },
-      {
-        title: 'Real time changes',
-        description:
-          'See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.',
-        content: (
-          <div className="h-full w-full  flex items-center justify-center text-white">
-            <Image
-              src="/photo.png"
-              width={300}
-              height={300}
-              className="h-full w-full object-cover"
-              alt="linear board demo"
-            />
-          </div>
-        ),
-      },
-      {
-        title: 'Version control',
-        description:
-          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-        content: (
-          <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-            Version control
-          </div>
-        ),
-      },
-    ],
-  },
+  // {
+  //   title: 'Link Tree Clone',
+  //   description:
+  //     'A clone of the popular Link Tree website with additional customization options.',
+  //   tech: [
+  //     'TypeScript',
+  //     'Next.js',
+  //     'Postgres',
+  //     'Tailwind',
+  //     'Prisma',
+  //     'Framer Motion',
+  //   ],
+  //   content: [
+  //     {
+  //       title: 'Customizable Links',
+  //       description:
+  //         'Users can customize the appearance and order of their links, making it easy to create a personalized landing page.',
+  //       content: (
+  //         <div className="h-full w-full flex items-center justify-center text-white">
+  //           <Image
+  //             src="/link-tree-clone.png"
+  //             width={300}
+  //             height={300}
+  //             className="h-full w-full object-cover"
+  //             alt="Link Tree Clone screenshot"
+  //           />
+  //         </div>
+  //       ),
+  //     },
+  //     {
+  //       title: 'Analytics Dashboard',
+  //       description:
+  //         'An integrated analytics dashboard allows users to track clicks and engagement on their links, providing insights into their audience.',
+  //       content: (
+  //         <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+  //           Analytics Dashboard
+  //         </div>
+  //       ),
+  //     },
+  //     {
+  //       title: 'Responsive Design',
+  //       description:
+  //         'The site is fully responsive, ensuring that it looks great on all devices, from mobile phones to large desktop monitors.',
+  //       content: (
+  //         <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
+  //           Responsive Design
+  //         </div>
+  //       ),
+  //     },
+  //   ],
+  // },
 ];
 
 const Projects = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window === 'undefined') return;
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth < 640);
+  //   };
+  //   handleResize();
+  //   window.addEventListener('resize', handleResize);
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   const controls = useAnimationControls();
 
