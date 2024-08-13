@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useRef, useState } from 'react';
 import SectionHeading from './ui/section-heading';
 import { Input } from './ui/input';
 import {
@@ -11,10 +13,32 @@ import {
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { sendEmail } from '@/actions/email';
-import { SendIcon } from 'lucide-react';
+import { MailCheckIcon, MailWarningIcon, SendIcon } from 'lucide-react';
 import SubmitButton from './ui/submit-button';
+import { toast } from 'sonner';
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const sendMessage = async (formData: FormData) => {
+    if (!formRef.current) return;
+    const result = await sendEmail(formData);
+    const { error, success } = result;
+    if (error) {
+      console.log('Error: ', error);
+      toast.error(<ErrorToast />, {
+        className:
+          'bg-gradient-to-r from-zinc-900 from-10% via-rose-900 via-30% to-zinc-900 to-90% border-zinc-900',
+      });
+    } else {
+      console.log('Success: ', success);
+      toast.success(<SuccessToast />, {
+        className:
+          'bg-gradient-to-r from-zinc-700 from-10% via-emerald-800 via-30% to-zinc-700 to-90%  border-zinc-900',
+      });
+    }
+    formRef.current.reset();
+  };
+
   return (
     <section id="contact" className="scroll-mt-6 mb-12 pb-6 mt-12">
       <SectionHeading>
@@ -38,7 +62,7 @@ const Contact = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form className="space-y-4" action={sendEmail}>
+          <form ref={formRef} className="space-y-4" action={sendMessage}>
             <div className="space-y-1">
               <Label htmlFor="senderEmail">Email</Label>
               <Input
@@ -62,3 +86,19 @@ const Contact = () => {
 };
 
 export default Contact;
+
+const SuccessToast = () => (
+  <div className="inline-flex">
+    <MailCheckIcon className="w-6 h-6 mr-2 text-emerald-600" />{' '}
+    <p className="text-white font-semibold">I will get back to you soon!</p>
+  </div>
+);
+
+const ErrorToast = () => (
+  <div className="inline-flex">
+    <MailWarningIcon className="w-6 h-6 mr-2 text-rose-900" />{' '}
+    <p className="text-white font-semibold">
+      Something went wrong, use the email link in the description instead.
+    </p>
+  </div>
+);

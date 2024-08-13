@@ -13,6 +13,7 @@ import {
   BriefcaseBusiness,
 } from 'lucide-react';
 import { FloatingNav } from '@/components/ui/floating-navbar';
+import { Toaster } from 'sonner';
 
 const jetBrains = JetBrains_Mono({
   subsets: ['latin'],
@@ -50,6 +51,7 @@ export default function RootLayout({
         >
           <ModeToggle />
           <FloatingNav navItems={navItems} />
+          <Toaster />
           {children}
         </ThemeProvider>
       </body>

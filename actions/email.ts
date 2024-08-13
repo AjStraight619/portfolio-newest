@@ -1,4 +1,5 @@
 'use server';
+
 import ContactFormEmail from '@/email/email';
 import { getErrorMessage, validateString } from '@/lib/utils';
 import React from 'react';
@@ -22,6 +23,7 @@ export const sendEmail = async (formData: FormData) => {
   }
 
   let data;
+
   try {
     data = await resend.emails.send({
       from: 'Contact Form <no-reply@alexcodes.io>',
@@ -38,7 +40,6 @@ export const sendEmail = async (formData: FormData) => {
       error: getErrorMessage(error),
     };
   }
-
   return {
     data,
     success: 'Message sent successfully',

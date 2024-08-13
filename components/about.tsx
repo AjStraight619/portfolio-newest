@@ -14,6 +14,28 @@ import { tech } from '@/lib/constants';
 import SectionHeading from './ui/section-heading';
 import { useMobile } from '@/hooks/useMobile';
 
+const About = () => {
+  return (
+    <section id="about" className="scroll-mt-6 mt-12 w-full hover:scroll-mt-0">
+      <SectionHeading>
+        About <span className="text-purple-300">Me.</span>
+      </SectionHeading>
+      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            className={item.className}
+            icon={item.icon}
+          />
+        ))}
+      </BentoGrid>
+    </section>
+  );
+};
+
 const TechStack = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -89,31 +111,24 @@ const CareerInterests = () => {
   );
 };
 
-const About = () => {
-  return (
-    <section id="about" className="scroll-mt-6 mt-12 w-full hover:scroll-mt-0">
-      <SectionHeading>
-        About <span className="text-purple-300">Me.</span>
-      </SectionHeading>
-      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            className={item.className}
-            icon={item.icon}
-          />
-        ))}
-      </BentoGrid>
-    </section>
-  );
-};
-
-const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
+const Achievements = () => (
+  <ul className="list-disc pl-5 space-y-2">
+    <li>Selected STEM Pathways Scholar: Presented research at SACNAS.</li>
+    <li>
+      Research Contributions: Optimized NOMA with IRSs using advanced
+      algorithms.
+    </li>
+    <li>Perfect GPA: 4.0 Major GPA in Computer Science.</li>
+    <li>
+      Teaching Assistant: Contributed to the Data Structures and Algorithms
+      course at SDSU.
+    </li>
+  </ul>
 );
+
+// const Skeleton = () => (
+//   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
+// );
 
 const items = [
   {
@@ -143,47 +158,10 @@ const items = [
   {
     title: 'Achievments',
     description: 'Highlights of my academic and professional accomplishments.',
-    header: <Skeleton />,
+    header: <Achievements />,
     className: 'md:col-span-2',
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
 ];
 
 export default About;
-
-// TODO: MAKE A CLEANER IMPLEMENTATION OF THIS LATER
-
-// const ref = useRef(null);
-// const isInView = useInView(ref, { once: false });
-// const [isHovering, setIsHovering] = useState(false);
-// const [scrollY, setScrollY] = useState(0);
-// const motionScrolly = useMotionValue(0);
-
-// useEffect(() => {
-//   if (!isInView) {
-//     setScrollY(0);
-//   }
-// }, [isInView]);
-
-// useEffect(() => {
-//   if (!isHovering) {
-//     setScrollY(0);
-//   }
-// }, [isHovering]);
-
-// useEffect(() => {
-//   console.log('Element is in view: ', isInView);
-// }, [isInView]);
-
-// const handleScroll = useCallback(() => {
-//   if (isInView && !isHovering) {
-//     setScrollY(prev => (prev <= -100 ? 0 : prev - 0.25));
-//   } else if (isInView && isHovering) {
-//     setScrollY(prev => (prev <= -200 ? 0 : prev - 1));
-//   }
-// }, [isHovering, isInView]);
-
-// useEffect(() => {
-//   const interval = setInterval(handleScroll, 50);
-//   return () => clearInterval(interval);
-// }, [isInView, isHovering, handleScroll]);
