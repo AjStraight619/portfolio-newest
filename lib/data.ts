@@ -38,7 +38,7 @@ export const experiencesData = [
     subtitle: 'Frontend Developer',
     location: 'San Diego, CA',
     description:
-      'I am currently working as a frontend developer intern at AcademicAssist. I am reworking their landing page, and adding new features to their web app. I am using React, TypeScript, and Tailwind for this project.',
+      'I am currently working as a frontend developer intern at AcademicAssist. I reworked their landing page, and added new features to their web app.',
     icon: React.createElement(CgWorkAlt),
     date: '2024',
   },
@@ -57,7 +57,7 @@ export const experiencesData = [
     subtitle: 'Oak Outlet Plus',
     location: 'San Diego, CA',
     description:
-      'Built a website for the local company Oak Outlet Plus. Utilized a full-stack approach with React, Next.js, TypeScript, and Tailwind to deliver a robust and scalable web application.',
+      'Built a website for the local company Oak Outlet Plus. Utilized a full-stack approach with React, Next.js, TypeScript, Tailwind, Framer Motion and S3 for file storage.',
     icon: React.createElement(FaReact),
     date: '2024',
   },
