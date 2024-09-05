@@ -25,7 +25,7 @@ const Contact = () => {
     const { error, success } = result;
     if (error) {
       console.log('Error: ', error);
-      toast.error(<ErrorToast />, {
+      toast.error(<ErrorToast error={error} />, {
         className:
           'bg-gradient-to-r from-zinc-900 from-10% via-rose-900 via-30% to-zinc-900 to-90% border-zinc-900',
       });
@@ -94,11 +94,18 @@ const SuccessToast = () => (
   </div>
 );
 
-const ErrorToast = () => (
+const ErrorToast = (props: { error: string }) => (
   <div className="inline-flex">
     <MailWarningIcon className="w-6 h-6 mr-2 text-rose-900" />{' '}
     <p className="text-white font-semibold">
-      Something went wrong, use the email link in the description instead.
+      {props.error ? (
+        props.error
+      ) : (
+        <span>
+          {' '}
+          Something went wrong, use the email link in the description instead.
+        </span>
+      )}
     </p>
   </div>
 );

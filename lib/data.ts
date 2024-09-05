@@ -9,7 +9,7 @@ export const experiencesData = [
     subtitle: 'Southwestern College',
     location: 'Chula Vista, CA',
     description:
-      'I worked as a computer science tutor at Southwestern College. I helped students with their programming assignments and projects. I also held workshops on various programming topics.',
+      'Provided tutoring support to computer science students at Southwestern College, assisting with programming assignments and projects. Conducted workshops on various programming languages and topics to enhance student understanding.',
     icon: React.createElement(CgWorkAlt),
     date: '2021 - 2022',
   },
@@ -18,37 +18,37 @@ export const experiencesData = [
     subtitle: 'San Diego State University',
     location: 'San Diego, CA',
     description:
-      'I worked as a research assistant at San Deigo State University. I worked on a project that involved optimizing data rates for a NOMA (Non-Orthogonal Multiple Access) system. I used Python and MATLAB for this project.',
+      'Contributed to a research project at San Diego State University focused on optimizing data rates for a Non-Orthogonal Multiple Access (NOMA) system. Utilized Python and MATLAB for data analysis and simulations.',
     icon: React.createElement(CgWorkAlt),
     date: '2023',
   },
 
   {
-    title: 'Attending San Diego State University',
-    subtitle: 'Computer Science, Major GPA: 4.0',
+    title: 'Computer Science Student',
+    subtitle: 'San Diego State University, Major GPA: 4.0',
     location: 'San Diego, CA',
     description:
-      'I am currently attending San Diego State University, majoring in Computer Science. I am expected to graduate in 2025. I am currently looking for a summer internship.',
+      'Currently pursuing a Bachelor’s degree in Computer Science at San Diego State University, maintaining a 4.0 GPA. Expected graduation in 2025, actively seeking summer internship opportunities.',
     icon: React.createElement(LuGraduationCap),
     date: '2023 - present',
   },
 
   {
-    title: 'Internship at AcademicAssist',
-    subtitle: 'Frontend Developer',
+    title: 'Frontend Developer Intern',
+    subtitle: 'AcademicAssist',
     location: 'San Diego, CA',
     description:
-      'I am currently working as a frontend developer intern at AcademicAssist. I reworked their landing page, and added new features to their web app.',
+      'Serving as a frontend developer intern at AcademicAssist, leading the redesign of the landing page and implementing new features to enhance the functionality of the web app.',
     icon: React.createElement(CgWorkAlt),
     date: '2024',
   },
 
   {
-    title: 'Paid Internship at San Diego State University',
-    subtitle: 'Frontend Developer',
+    title: 'Frontend Developer Intern',
+    subtitle: 'San Diego State University',
     location: 'San Diego, CA',
     description:
-      'Currently building a website for the Computer Science department at San Deigo State University. Implemented authentication with auth.js.',
+      'Developing a website for the Computer Science department at San Diego State University, incorporating authentication mechanisms using auth.js.',
     icon: React.createElement(CgWorkAlt),
     date: '2024',
   },
@@ -57,7 +57,7 @@ export const experiencesData = [
     subtitle: 'Oak Outlet Plus',
     location: 'San Diego, CA',
     description:
-      'Built a website for the local company Oak Outlet Plus. Utilized a full-stack approach with React, Next.js, TypeScript, Tailwind, Framer Motion and S3 for file storage.',
+      'Designed and developed a full-stack website for Oak Outlet Plus, a local business, using React, Next.js, TypeScript, Tailwind, Framer Motion, and S3 for file storage.',
     icon: React.createElement(FaReact),
     date: '2024',
   },
