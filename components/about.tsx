@@ -149,9 +149,7 @@ const items = [
   {
     title: 'San Diego State University',
     description: 'Bachelor of Science in Computer Science, Expected May 2025.',
-    header: (
-      <EvervaultCard className="sm:h-full h-[6rem]" text="4.0 Major GPA" />
-    ),
+    header: <EvervaultCard className="h-2/3" text="4.0 Major GPA" />,
     className: 'md:col-span-1',
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
