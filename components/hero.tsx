@@ -1,13 +1,13 @@
-import React from 'react';
-import { HeroHighlight } from './ui/hero-highlight';
-import { TextGenerateEffect } from './ui/text-generate-effect';
-import Image from 'next/image';
-import { Button } from './ui/button';
-import { HoverBorderGradient } from './ui/hover-border-gradient';
-import { ArrowRight, DownloadIcon } from 'lucide-react';
-import Link from 'next/link';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { Spotlight } from './ui/spotlight';
+import React from "react";
+import { HeroHighlight } from "./ui/hero-highlight";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
+import Image from "next/image";
+import { Button } from "./ui/button";
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
+import { ArrowRight, DownloadIcon } from "lucide-react";
+import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Spotlight } from "./ui/spotlight";
 
 const Hero = () => {
   return (
@@ -49,16 +49,16 @@ const Intro = () => {
       </div>
       <p className="text-center text-balance text-sm sm:text-lg md:text-xl leading-relaxed font-medium">
         Hello, I am Alex, an aspiring full stack engineer. I have developed
-        multiple projects using{' '}
+        multiple projects using{" "}
         <span className="underline text-purple-300 underline-offset-2">
           React
-        </span>{' '}
-        and{' '}
+        </span>{" "}
+        and{" "}
         <span className="underline text-purple-300 underline-offset-2">
           Next.js
         </span>
-        . Recently, I have integrated{' '}
-        <span className="underline text-purple-300 underline-offset-2">Go</span>{' '}
+        . Recently, I have integrated{" "}
+        <span className="underline text-purple-300 underline-offset-2">Go</span>{" "}
         into my tech stack.
         {/* My most recent project,{' '} */}
         {/* <span className="font-bold">Pictionary With Friends</span>, leverages
@@ -116,6 +116,20 @@ const Socials = () => {
           rel="noopener noreferrer"
         >
           <FaGithub className="size-8" />
+        </a>
+      </Button>
+      <Button
+        asChild
+        variant="ghost"
+        size="icon"
+        className="rounded-full hover:scale-105 transition-all duration-150 p-2"
+      >
+        <a
+          href="https://www.linkedin.com/in/alex-straight-997464272/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin className="size-8" />
         </a>
       </Button>
     </div>
