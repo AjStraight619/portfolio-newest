@@ -118,20 +118,6 @@ const Socials = () => {
           <FaGithub className="size-8" />
         </a>
       </Button>
-      <Button
-        asChild
-        variant="ghost"
-        size="icon"
-        className="rounded-full hover:scale-105 transition-all duration-150 p-2"
-      >
-        <a
-          href="https://www.linkedin.com/in/alex-straight-997464272/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin className="size-8" />
-        </a>
-      </Button>
     </div>
   );
 };
