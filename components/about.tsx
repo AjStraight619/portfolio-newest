@@ -118,7 +118,7 @@ const Achievements = () => (
       Research Contributions: Optimized NOMA with IRSs using advanced
       algorithms.
     </li>
-    <li>Perfect GPA: 4.0 Major GPA in Computer Science.</li>
+    <li>3.8 Major GPA in Computer Science.</li>
     <li>
       Teaching Assistant: Contributed to the Data Structures and Algorithms
       course at SDSU.
@@ -149,7 +149,7 @@ const items = [
   {
     title: 'San Diego State University',
     description: 'Bachelor of Science in Computer Science, Expected May 2025.',
-    header: <EvervaultCard className="h-2/3" text="4.0 Major GPA" />,
+    header: <EvervaultCard className="h-2/3" text="3.8 Major GPA" />,
     className: 'md:col-span-1',
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
