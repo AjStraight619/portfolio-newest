@@ -1,12 +1,13 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import SectionHeading from "./ui/section-heading";
 import Image from "next/image";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import pathfinding from "@/assets/pathfinding.png";
-import pictionary from "@/assets/pictionary.png";
-
-import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
+import pictionaryLanding from "@/assets/pictionary-landing.png";
+import pictionaryGameplay from "@/assets/pictionary-gameplay.png";
+import { AnimatePresence, motion } from "framer-motion";
+import { tech } from "@/lib/constants";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
@@ -39,13 +40,13 @@ const projects = [
     ],
     content: [
       {
-        title: "Real-Time Drawing",
+        title: "Landing Page",
         isImage: true,
         description:
           "Players can draw and guess in real-time, making the game interactive and engaging. The game uses WebSocket technology to ensure low-latency communication between players.",
         content: (
           <Image
-            src={pictionary}
+            src={pictionaryLanding}
             className="rounded-md object-cover"
             quality={100}
             alt="Pictionary game screenshot"
@@ -54,13 +55,16 @@ const projects = [
       },
       {
         title: "Dynamic Gameplay",
-        isImage: false,
+        isImage: true,
         description:
           "The game dynamically adjusts the difficulty level and drawing prompts based on the number of players, ensuring a fun experience for everyone involved.",
         content: (
-          <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-            Dynamic Gameplay
-          </div>
+          <Image
+            src={pictionaryGameplay}
+            className="rounded-md object-cover"
+            quality={100}
+            alt="Pictionary game screenshot"
+          />
         ),
       },
       {
@@ -70,7 +74,49 @@ const projects = [
           "A real-time leaderboard keeps track of player scores, adding a competitive element to the game. Players can see their ranking and strive to be the top guesser or artist.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-            Leaderboard System
+            Coming Soon
+          </div>
+        ),
+      },
+    ],
+  },
+  {
+    title: "2D Physics Engine",
+    githubLinks: ["https://github.com/AjStraight619/2Dengine"],
+    description:
+      "A 2D physics engine built with Zig. It includes features such as gravity, collision detection, and object movement.",
+    tech: ["Zig", "raylib"],
+    content: [
+      {
+        title: "Impulse-Based Collision System",
+        isImage: true,
+        description:
+          "Implements a robust impulse-based physics system handling collisions between different shapes with accurate bounce and friction. The engine correctly simulates object resting, sliding, and impact dynamics.",
+        content: (
+          <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--purple-500),var(--indigo-500))] flex items-center justify-center text-white">
+            Physics Demo Image
+          </div>
+        ),
+      },
+      {
+        title: "Real-Time Debug Visualization",
+        isImage: true,
+        description:
+          "Features comprehensive debug visualization tools showing collision normals, contact points, and velocity vectors. Toggle different visual layers to inspect and troubleshoot the physics simulation in real-time.",
+        content: (
+          <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--blue-500),var(--teal-500))] flex items-center justify-center text-white">
+            Debug Visualization Image
+          </div>
+        ),
+      },
+      {
+        title: "Built From Scratch in Zig",
+        isImage: false,
+        description:
+          "Engineered entirely from first principles using the Zig programming language, with no external physics libraries. Demonstrates low-level programming expertise and deep understanding of physics simulation concepts.",
+        content: (
+          <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--green-500),var(--lime-500))] flex items-center justify-center text-white">
+            Zig Implementation
           </div>
         ),
       },
@@ -218,28 +264,31 @@ const Projects = () => {
             <AnimatePresence key={idx}>
               <Card>
                 <CardHeader>
-                  <CardTitle>
-                    <motion.div
-                      initial={{
-                        opacity: 0,
-                        y: -20,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          duration: 0.3,
-                        },
-                      }}
-                    >
-                      <div className="flex flex-row items-center gap-x-2">
-                        {proj.title}
-                        {proj.githubLinks?.map((url, idx) => (
-                          <GitHubLink key={idx} url={url} />
-                        ))}
-                      </div>
-                    </motion.div>
-                  </CardTitle>
+                  <div className="flex justify-between items-start">
+                    <CardTitle>
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          y: -20,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            duration: 0.3,
+                          },
+                        }}
+                      >
+                        <div className="flex flex-row items-center gap-x-2">
+                          {proj.title}
+                          {proj.githubLinks?.map((url, idx) => (
+                            <GitHubLink key={idx} url={url} />
+                          ))}
+                        </div>
+                      </motion.div>
+                    </CardTitle>
+                    <ProjectTechIcons technologies={proj.tech} />
+                  </div>
                   <CardDescription>{proj.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -265,5 +314,53 @@ function GitHubLink({ url }: { url: string }) {
     <a href={url} target="_blank">
       <FaGithub />
     </a>
+  );
+}
+
+function ProjectTechIcons({ technologies }: { technologies: string[] }) {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: { opacity: 1, scale: 1 },
+  };
+
+  // Find matching icons from tech constant
+  const getIconForTech = (techName: string) => {
+    const techItem = tech.find(
+      (t) => t.label.toLowerCase() === techName.toLowerCase()
+    );
+    return techItem?.icon;
+  };
+
+  return (
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="flex flex-wrap gap-2 justify-end"
+    >
+      {technologies.map((techName, index) => {
+        const icon = getIconForTech(techName);
+        return icon ? (
+          <motion.div
+            key={index}
+            variants={item}
+            className="size-5 flex items-center justify-center"
+            title={techName}
+          >
+            {icon}
+          </motion.div>
+        ) : null;
+      })}
+    </motion.div>
   );
 }
