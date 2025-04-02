@@ -28,7 +28,7 @@ export const experiencesData = [
     subtitle: "San Diego State University, Major GPA: 4.0",
     location: "San Diego, CA",
     description:
-      "Currently pursuing a Bachelor’s degree in Computer Science at San Diego State University, maintaining a 4.0 GPA. Expected graduation May 2025.",
+      "Currently pursuing a Bachelor’s degree in Computer Science at San Diego State University, maintaining a 3.8 Major GPA. Expected graduation May 2025.",
     icon: React.createElement(LuGraduationCap),
     date: "2023 - present",
   },
