@@ -82,7 +82,7 @@ const projects = [
   },
   {
     title: "2D Physics Engine",
-    githubLinks: ["https://github.com/AjStraight619/2Dengine"],
+    githubLinks: ["https://github.com/AjStraight619/Zig2DEngine"],
     description:
       "A 2D physics engine built with Zig. It includes features such as gravity, collision detection, and object movement.",
     tech: ["Zig", "raylib"],
@@ -110,7 +110,7 @@ const projects = [
         ),
       },
       {
-        title: "Built From Scratch in Zig",
+        title: "Built in Zig with raylib",
         isImage: false,
         description:
           "Engineered entirely from first principles using the Zig programming language, with no external physics libraries. Demonstrates low-level programming expertise and deep understanding of physics simulation concepts.",
