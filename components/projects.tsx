@@ -27,7 +27,7 @@ const projects = [
     title: "Pictionary",
     githubLinks: ["https://github.com/AjStraight619/pictionary"],
     description:
-      "A multiplayer game inspired by Skribbl.io. Developed using Go for WebSocket communication with the client. Currently in development. Will be available on iOS and Android soon.",
+      "My take on the classic drawing and guessing game, similar to Skribbl.io. Built the backend with Go to handle real-time WebSocket connections between players. Still working on it, but planning to release mobile versions for iOS and Android.",
     tech: [
       "TypeScript",
       "Next.js",
@@ -43,7 +43,7 @@ const projects = [
         title: "Landing Page",
         isImage: true,
         description:
-          "Players can draw and guess in real-time, making the game interactive and engaging. The game uses WebSocket technology to ensure low-latency communication between players.",
+          "Clean, simple landing page where players can join rooms and start drawing. The real magic happens with WebSocket connections that let everyone see drawings in real-time as they're being made.",
         content: (
           <Image
             src={pictionaryLanding}
@@ -57,7 +57,7 @@ const projects = [
         title: "Dynamic Gameplay",
         isImage: true,
         description:
-          "The game dynamically adjusts the difficulty level and drawing prompts based on the number of players, ensuring a fun experience for everyone involved.",
+          "Turn-based drawing game where players take turns sketching while others guess. Built a custom canvas with drag-and-drop functionality, undo/redo controls, and real-time drawing sync. The Go backend handles all WebSocket communication between players.",
         content: (
           <Image
             src={pictionaryGameplay}
@@ -71,10 +71,10 @@ const projects = [
         title: "Leaderboard System",
         isImage: false,
         description:
-          "A real-time leaderboard keeps track of player scores, adding a competitive element to the game. Players can see their ranking and strive to be the top guesser or artist.",
+          "Currently implementing a live leaderboard that tracks player scores and statistics across multiple rounds. Updates in real-time as players guess correctly and earn points.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-            Coming Soon
+            Currently Being Implemented
           </div>
         ),
       },
@@ -84,14 +84,14 @@ const projects = [
     title: "2D Physics Engine",
     githubLinks: ["https://github.com/AjStraight619/Zig2DEngine"],
     description:
-      "A 2D physics engine built with Zig. It includes features such as gravity, collision detection, and object movement.",
+      "A physics engine I built from scratch using Zig and raylib. Handles gravity, collisions, and object movement. Wanted to understand how physics engines actually work under the hood.",
     tech: ["Zig", "raylib"],
     content: [
       {
         title: "Impulse-Based Collision System",
         isImage: true,
         description:
-          "Implements a robust impulse-based physics system handling collisions between different shapes with accurate bounce and friction. The engine correctly simulates object resting, sliding, and impact dynamics.",
+          "Built a collision system that handles bouncing, friction, and objects coming to rest. Took me way too long to get the math right, but now circles bounce off rectangles like they should.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--purple-500),var(--indigo-500))] flex items-center justify-center text-white">
             Physics Demo Image
@@ -102,7 +102,7 @@ const projects = [
         title: "Real-Time Debug Visualization",
         isImage: true,
         description:
-          "Features comprehensive debug visualization tools showing collision normals, contact points, and velocity vectors. Toggle different visual layers to inspect and troubleshoot the physics simulation in real-time.",
+          "Added visual debugging tools so I could actually see what was happening during collisions. Shows contact points, velocity vectors, and collision normals - super helpful when things weren't working right.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--blue-500),var(--teal-500))] flex items-center justify-center text-white">
             Debug Visualization Image
@@ -113,7 +113,7 @@ const projects = [
         title: "Built in Zig with raylib",
         isImage: false,
         description:
-          "Engineered entirely from first principles using the Zig programming language, with no external physics libraries. Demonstrates low-level programming expertise and deep understanding of physics simulation concepts.",
+          "Wrote everything from scratch in Zig without using any physics libraries. Was a great way to learn both low-level programming and the math behind physics simulations.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--green-500),var(--lime-500))] flex items-center justify-center text-white">
             Zig Implementation
@@ -126,14 +126,14 @@ const projects = [
     title: "Pathfinding Visualizer",
     githubLinks: ["https://github.com/AjStraight619/PathfindingVisualizer"],
     description:
-      "A tool to visualize and compare various pathfinding algorithms.",
+      "A visual tool for comparing different pathfinding algorithms like A*, Dijkstra, and BFS. Built it to better understand how these algorithms work and which ones perform best in different scenarios.",
     tech: ["React", "TypeScript", "Tailwind", "Framer Motion"],
     content: [
       {
         title: "Algorithm Visualization",
         isImage: true,
         description:
-          "Visualize popular pathfinding algorithms like A*, Dijkstra, and BFS. See how each algorithm finds the shortest path in a grid-based layout.",
+          "Watch algorithms like A*, Dijkstra, and BFS find the shortest path in real-time. Each algorithm explores the grid differently - some are fast, others are thorough.",
         content: (
           <Image
             src={pathfinding}
@@ -147,7 +147,7 @@ const projects = [
         title: "Customizable Grids",
         isImage: false,
         description:
-          "Create and modify grids with obstacles, start, and end points to see how different algorithms perform under various conditions. Currently implementing auto-generatable mazes to enhance the complexity and challenge of pathfinding.",
+          "Draw walls, move start and end points around, and see how different algorithms handle various maze layouts. Working on auto-generated mazes to make testing more interesting.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
             Customizable Grids
@@ -158,7 +158,7 @@ const projects = [
         title: "Interactive Demo",
         isImage: false,
         description:
-          "Interact with the visualizer by placing obstacles, changing start and end points, and watching the algorithms in action.",
+          "Click around to create obstacles, drag the start and end points, then watch the algorithms do their thing. Much more fun than just reading about them in textbooks.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
             Interactive Demo
@@ -172,7 +172,7 @@ const projects = [
     title: "Discord Bot",
     githubLinks: ["https://github.com/AjStraight619/discord-bot"],
     description:
-      "A feature-rich Discord bot built with Go and DiscordGo. It integrates AI responses via OpenAI, fetches real-time news using NewsAPI, manages music playback in voice channels, and uses cron jobs for scheduled updates.",
+      "A Discord bot written in Go that does a bunch of useful stuff. Connects to OpenAI for smart responses, fetches news from NewsAPI, plays music in voice channels, and sends scheduled updates using cron jobs.",
     tech: [
       "Go",
       "DiscordGo",
@@ -187,7 +187,7 @@ const projects = [
         title: "Multi-Command Functionality",
         isImage: false,
         description:
-          "Supports multiple commands such as AI queries, news updates, and music playback. Designed to handle real-time events and user interactions within Discord.",
+          "Handles a variety of commands - from asking AI questions to getting the latest news. Built it to be responsive and handle multiple users simultaneously without breaking a sweat.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--purple-500),var(--indigo-500))] flex items-center justify-center text-white">
             Multi-Command Functionality
@@ -198,7 +198,7 @@ const projects = [
         title: "Voice & Music Integration",
         isImage: false,
         description:
-          "Seamlessly joins voice channels to stream music and manage voice interactions using Go concurrency and DiscordGo.",
+          "Can join voice channels and stream music for the server. Used Go's concurrency features to handle audio streaming without blocking other bot functions.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--blue-500),var(--teal-500))] flex items-center justify-center text-white">
             Voice & Music Integration
@@ -209,7 +209,7 @@ const projects = [
         title: "API Integrations & Scheduled Updates",
         isImage: false,
         description:
-          "Integrates with external services such as OpenAI for intelligent responses and NewsAPI for up-to-date headlines. Cron jobs are used to send scheduled updates.",
+          "Pulls data from OpenAI and NewsAPI to keep conversations interesting and informative. Set up cron jobs for scheduled messages so the bot can send daily updates automatically.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--green-500),var(--lime-500))] flex items-center justify-center text-white">
             API Integrations & Scheduled Updates
