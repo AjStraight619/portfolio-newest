@@ -91,7 +91,7 @@ const projects = [
         title: "Impulse-Based Collision System",
         isImage: true,
         description:
-          "Built a collision system that handles bouncing, friction, and objects coming to rest. Took me way too long to get the math right, but now circles bounce off rectangles like they should.",
+          "Built a collision system that handles bouncing, friction, and objects coming to rest. Implements impulse-based physics calculations for realistic interactions between different geometric shapes.",
         content: (
           <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--purple-500),var(--indigo-500))] flex items-center justify-center text-white">
             Physics Demo Image
