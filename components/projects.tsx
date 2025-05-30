@@ -6,6 +6,8 @@ import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import pathfinding from "@/assets/pathfinding.png";
 import pictionaryLanding from "@/assets/pictionary-landing.png";
 import pictionaryGameplay from "@/assets/pictionary-gameplay.png";
+import zig2d1 from "@/assets/zig2d_1.gif";
+import zig2d2 from "@/assets/zig2d_2.gif";
 import { AnimatePresence, motion } from "framer-motion";
 import { tech } from "@/lib/constants";
 
@@ -93,9 +95,13 @@ const projects = [
         description:
           "Built a collision system that handles bouncing, friction, and objects coming to rest. Implements impulse-based physics calculations for realistic interactions between different geometric shapes.",
         content: (
-          <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--purple-500),var(--indigo-500))] flex items-center justify-center text-white">
-            Physics Demo Image
-          </div>
+          <Image
+            src={zig2d1}
+            className="rounded-md object-cover"
+            quality={100}
+            unoptimized={true}
+            alt="Physics engine collision demo"
+          />
         ),
       },
       {
@@ -104,9 +110,13 @@ const projects = [
         description:
           "Added visual debugging tools so I could actually see what was happening during collisions. Shows contact points, velocity vectors, and collision normals - super helpful when things weren't working right.",
         content: (
-          <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--blue-500),var(--teal-500))] flex items-center justify-center text-white">
-            Debug Visualization Image
-          </div>
+          <Image
+            src={zig2d2}
+            className="rounded-md object-cover"
+            quality={100}
+            unoptimized={true}
+            alt="Physics engine debug visualization"
+          />
         ),
       },
       {
