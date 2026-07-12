@@ -48,18 +48,26 @@ const Intro = () => {
         </div>
       </div>
       <p className="text-center text-balance text-sm sm:text-lg md:text-xl leading-relaxed font-medium">
-        Hello, I am Alex, an aspiring full stack engineer. I have developed
-        multiple projects using{" "}
+        Hello, I am Alex, a full stack engineer at{" "}
         <span className="underline text-purple-300 underline-offset-2">
-          React
-        </span>{" "}
-        and{" "}
-        <span className="underline text-purple-300 underline-offset-2">
-          Next.js
+          Sansay
         </span>
-        . Recently, I have integrated{" "}
-        <span className="underline text-purple-300 underline-offset-2">Go</span>{" "}
-        into my tech stack.
+        , where I am building an{" "}
+        <span className="underline text-purple-300 underline-offset-2">
+          AI support agent
+        </span>{" "}
+        and a hybrid search platform for a telecom product with{" "}
+        <span className="underline text-purple-300 underline-offset-2">
+          Node.js
+        </span>
+        ,{" "}
+        <span className="underline text-purple-300 underline-offset-2">Go</span>
+        , and{" "}
+        <span className="underline text-purple-300 underline-offset-2">
+          LangGraph
+        </span>
+        . Outside of work I enjoy building things from scratch, from physics
+        engines to real-time multiplayer games.
         {/* My most recent project,{' '} */}
         {/* <span className="font-bold">Pictionary With Friends</span>, leverages
           Go&apos;s concurrency model for WebSockets. <br />

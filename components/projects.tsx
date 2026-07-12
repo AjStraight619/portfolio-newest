@@ -8,6 +8,8 @@ import pictionaryLanding from "@/assets/pictionary-landing.png";
 import pictionaryGameplay from "@/assets/pictionary-gameplay.png";
 import zig2d1 from "@/assets/zig2d_1.gif";
 import zig2d2 from "@/assets/zig2d_2.gif";
+import zwag1 from "@/assets/zwag_1.png";
+import zwag2 from "@/assets/zwag_2.png";
 import { AnimatePresence, motion } from "framer-motion";
 import { tech } from "@/lib/constants";
 
@@ -25,6 +27,54 @@ import { FaGithub } from "react-icons/fa";
 // Description: On left side of container, Content: Right side of container
 
 const projects = [
+  {
+    title: "zwag",
+    subtitle: "In development · closed source",
+    description:
+      "A TUI coding agent I'm building in 100% Zig, a command-line AI assistant you can chat with right in your terminal. I built it as an internal tool for work and my own daily driver, because I didn't want to be locked into Codex or Claude Code and wanted a serious Zig project to sink my teeth into. Currently closed source on Codeberg.",
+    tech: ["Zig", "libvaxis", "Anthropic API"],
+    content: [
+      {
+        title: "Terminal-Native Coding Agent",
+        isImage: true,
+        description:
+          "An agentic assistant that lives in the terminal. It reads and edits workspace files, searches by content or pattern, and grounds its answers in your actual code. Ships with session management and slash commands (/sessions, /clear, /help), and can resume your most recent session with --latest.",
+        content: (
+          <Image
+            src={zwag1}
+            className="rounded-md object-cover"
+            quality={100}
+            alt="zwag TUI coding agent banner and capabilities"
+          />
+        ),
+      },
+      {
+        title: "Scrollback-Aware Renderer",
+        isImage: true,
+        description:
+          "The renderer splits the screen into two regions: finished messages are committed as raw ANSI straight into the real terminal scrollback and never redrawn, while the live region (input, pickers, session browser) is repainted in place with libvaxis. Synchronized updates batch history commits and live repaints into one atomic frame, so there's no flicker.",
+        content: (
+          <Image
+            src={zwag2}
+            className="rounded-md object-cover"
+            quality={100}
+            alt="zwag renderer architecture explanation"
+          />
+        ),
+      },
+      {
+        title: "Built From Scratch in Zig",
+        isImage: false,
+        description:
+          "Written entirely in Zig with libvaxis as the only dependency. Currently targets the Anthropic API, with OpenAI and Ollama support on the way. Fast, low-overhead, and fully under my control, which is the whole reason I started building it.",
+        content: (
+          <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
+            100% Zig · libvaxis
+          </div>
+        ),
+      },
+    ],
+  },
   {
     title: "Pictionary",
     githubLinks: ["https://github.com/AjStraight619/pictionary"],

@@ -148,7 +148,7 @@ const items = [
   },
   {
     title: 'San Diego State University',
-    description: 'Bachelor of Science in Computer Science, Expected May 2025.',
+    description: 'Bachelor of Science in Computer Science, Graduated May 2025.',
     header: <EvervaultCard className="h-2/3" text="3.8 Major GPA" />,
     className: 'md:col-span-1',
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,

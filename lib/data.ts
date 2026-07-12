@@ -24,13 +24,13 @@ export const experiencesData = [
   },
 
   {
-    title: "Computer Science Student",
-    subtitle: "San Diego State University, Major GPA: 4.0",
+    title: "B.S. Computer Science",
+    subtitle: "San Diego State University, Major GPA: 3.8",
     location: "San Diego, CA",
     description:
-      "Currently pursuing a Bachelor’s degree in Computer Science at San Diego State University, maintaining a 3.8 Major GPA. Expected graduation May 2025.",
+      "Graduated with a Bachelor’s degree in Computer Science from San Diego State University, maintaining a 3.8 Major GPA. Named to the Dean’s List three times.",
     icon: React.createElement(LuGraduationCap),
-    date: "2023 - present",
+    date: "2023 - 2025",
   },
 
   {
@@ -44,13 +44,13 @@ export const experiencesData = [
   },
 
   {
-    title: "Frontend Developer Intern",
+    title: "Teaching Assistant",
     subtitle: "San Diego State University",
     location: "San Diego, CA",
     description:
-      "Developing a website for the Computer Science department at San Diego State University, incorporating authentication mechanisms using auth.js.",
+      "Served as a Teaching Assistant for the Data Structures & Algorithms and Advanced Algorithms courses at San Diego State University, holding office hours, leading review sessions, and helping students work through assignments and core concepts.",
     icon: React.createElement(CgWorkAlt),
-    date: "2024",
+    date: "2024 - 2025",
   },
   {
     title: "Freelance Full-Stack Engineer",
@@ -60,6 +60,15 @@ export const experiencesData = [
       "Designed and developed a full-stack website for Oak Outlet Plus, a local business, using React, Next.js, TypeScript, Tailwind, Framer Motion, and S3 for file storage.",
     icon: React.createElement(FaReact),
     date: "2024",
+  },
+  {
+    title: "Software Engineer",
+    subtitle: "Sansay Inc",
+    location: "La Jolla, San Diego, CA",
+    description:
+      "Building an AI support agent (LangGraph/Node.js) that automates telecom configuration for Sansay’s VSXi platform through internal system integration, schema validation, and real-time simulation. Developing a hybrid search and ranking system over internal documentation and support tickets using full-text search, vector search, and neural reranking to improve answer quality. Improving backend integration, data flow, and reliability across legacy and modern parts of a production support platform.",
+    icon: React.createElement(CgWorkAlt),
+    date: "June 2025 - Present",
   },
 ];
 
