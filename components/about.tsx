@@ -97,15 +97,12 @@ const CareerInterests = () => {
   return (
     <div className="sm:h-full max-h-[10rem]">
       <p className="text-balance p-4">
-        My primary interest lies in front-end development, where I enjoy
-        creating intuitive and dynamic user interfaces. However, as I have
-        gained experience with Go, I have also developed a strong interest in
-        backend development. This dual focus allows me to appreciate the full
-        spectrum of software development, from designing seamless user
-        experiences to building robust and scalable server-side applications.
-        Additionally, I am excited about exploring areas such as cloud computing
-        and DevOps, where I can leverage my skills in both front-end and
-        back-end development to create comprehensive and efficient solutions.
+        I work across the full stack, and lately most of my energy goes into
+        backend and AI systems. At Sansay I build AI agents and search
+        infrastructure in Node.js and Go, and on my own time I go lower level
+        with systems projects in Zig. I still care a lot about clean, intuitive
+        front-end work, but what I enjoy most is owning a problem from end to
+        end, from the interface down to the server and the data.
       </p>
     </div>
   );
@@ -141,7 +138,7 @@ const items = [
   },
   {
     title: 'Tech Stack',
-    description: 'Technolgies I am familiar with, some more than others.',
+    description: 'Technologies I am familiar with, some more than others.',
     header: <TechStack />,
     className: 'md:col-span-1',
     icon: <IconCode className="h-4 w-4 text-neutral-500" />,
@@ -154,7 +151,7 @@ const items = [
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: 'Achievments',
+    title: 'Achievements',
     description: 'Highlights of my academic and professional accomplishments.',
     header: <Achievements />,
     className: 'md:col-span-2',

@@ -53,9 +53,9 @@ const Contact = () => {
               {" "}
               <a
                 className="text-purple-300 hover:underline underline-offset-2"
-                href="mailto:Ajstraight619@gmail.com"
+                href="mailto:alex.straight.dev@gmail.com"
               >
-                AlexStraight619@gmail.com
+                alex.straight.dev@gmail.com
               </a>
               , or directly through this form.
             </span>

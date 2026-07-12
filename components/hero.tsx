@@ -38,7 +38,7 @@ const Intro = () => {
         <div className="relative h-full w-full rounded-full">
           <Image
             src="/photo.png"
-            alt=""
+            alt="Alex Straight"
             fill
             priority
             quality={100}

@@ -5,6 +5,15 @@ import { LuGraduationCap } from "react-icons/lu";
 
 export const experiencesData = [
   {
+    title: "B.S. Computer Science",
+    subtitle: "San Diego State University, Major GPA: 3.8",
+    location: "San Diego, CA",
+    description:
+      "Graduated with a Bachelor’s degree in Computer Science from San Diego State University, maintaining a 3.8 Major GPA. Named to the Dean’s List three times.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2021 - 2025",
+  },
+  {
     title: "Computer Science Tutor",
     subtitle: "Southwestern College",
     location: "Chula Vista, CA",
@@ -24,16 +33,6 @@ export const experiencesData = [
   },
 
   {
-    title: "B.S. Computer Science",
-    subtitle: "San Diego State University, Major GPA: 3.8",
-    location: "San Diego, CA",
-    description:
-      "Graduated with a Bachelor’s degree in Computer Science from San Diego State University, maintaining a 3.8 Major GPA. Named to the Dean’s List three times.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2023 - 2025",
-  },
-
-  {
     title: "Frontend Developer Intern",
     subtitle: "AcademicAssist",
     location: "San Diego, CA",
@@ -44,15 +43,6 @@ export const experiencesData = [
   },
 
   {
-    title: "Teaching Assistant",
-    subtitle: "San Diego State University",
-    location: "San Diego, CA",
-    description:
-      "Served as a Teaching Assistant for the Data Structures & Algorithms and Advanced Algorithms courses at San Diego State University, holding office hours, leading review sessions, and helping students work through assignments and core concepts.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2024 - 2025",
-  },
-  {
     title: "Freelance Full-Stack Engineer",
     subtitle: "Oak Outlet Plus",
     location: "San Diego, CA",
@@ -60,6 +50,15 @@ export const experiencesData = [
       "Designed and developed a full-stack website for Oak Outlet Plus, a local business, using React, Next.js, TypeScript, Tailwind, Framer Motion, and S3 for file storage.",
     icon: React.createElement(FaReact),
     date: "2024",
+  },
+  {
+    title: "Teaching Assistant",
+    subtitle: "San Diego State University",
+    location: "San Diego, CA",
+    description:
+      "Served as a Teaching Assistant for the Data Structures & Algorithms course at San Diego State University, holding office hours, leading review sessions, and helping students work through assignments and core concepts.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2024 - 2025",
   },
   {
     title: "Software Engineer",

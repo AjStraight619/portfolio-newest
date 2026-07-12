@@ -22,9 +22,26 @@ const jetBrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.alexcodes.io'),
   title: 'Alex Straight | Portfolio',
   description:
-    "Explore Alex Straight's portfolio, showcasing skills in front-end and back-end development, including projects, achievements, and a journey in the tech industry.",
+    'Alex Straight is a full stack software engineer building AI agents, search infrastructure, and real-time systems in Node.js, Go, and Zig. Explore his projects and experience.',
+  openGraph: {
+    title: 'Alex Straight | Portfolio',
+    description:
+      'Full stack software engineer building AI agents, search infrastructure, and real-time systems in Node.js, Go, and Zig.',
+    url: 'https://www.alexcodes.io',
+    siteName: 'Alex Straight',
+    images: [{ url: '/photo.png', width: 800, height: 800, alt: 'Alex Straight' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Alex Straight | Portfolio',
+    description:
+      'Full stack software engineer building AI agents, search infrastructure, and real-time systems in Node.js, Go, and Zig.',
+    images: ['/photo.png'],
+  },
 };
 
 export default function RootLayout({

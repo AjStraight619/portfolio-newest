@@ -65,15 +65,16 @@ export const StickyScroll = ({
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
   }, [activeCard]);
 
-  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxContent, setLightboxContent] =
+    useState<React.ReactNode>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
-  const closeLightbox = useCallback(() => setLightboxOpen(false), []);
+  const closeLightbox = useCallback(() => setLightboxContent(null), []);
 
   useEffect(() => {
-    if (!lightboxOpen) return;
+    if (!lightboxContent) return;
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeLightbox();
     };
@@ -83,7 +84,7 @@ export const StickyScroll = ({
       window.removeEventListener('keydown', onKeyDown);
       document.body.style.overflow = '';
     };
-  }, [lightboxOpen, closeLightbox]);
+  }, [lightboxContent, closeLightbox]);
 
   return (
     <motion.div
@@ -119,6 +120,34 @@ export const StickyScroll = ({
               >
                 {item.description}
               </motion.p>
+
+              {/* Inline visual for mobile / tablet, where the sticky side
+                  panel is hidden. Images are tappable to open the lightbox. */}
+              {item.isImage ? (
+                <button
+                  type="button"
+                  onClick={() => setLightboxContent(item.content)}
+                  aria-label="Expand image"
+                  className="group lg:hidden mt-6 block w-full max-w-sm overflow-hidden rounded-md cursor-zoom-in"
+                >
+                  <AspectRatio ratio={16 / 9} className="bg-muted">
+                    {item.content ?? null}
+                    <div className="absolute right-2 top-2 flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-1 text-xs font-medium text-white">
+                      <Maximize2 className="size-3" /> Tap to expand
+                    </div>
+                  </AspectRatio>
+                </button>
+              ) : (
+                <div
+                  style={{
+                    background:
+                      linearGradients[index % linearGradients.length],
+                  }}
+                  className="lg:hidden mt-6 h-48 w-full max-w-sm rounded-md"
+                >
+                  {item.content ?? null}
+                </div>
+              )}
             </div>
           ))}
           <div className="h-40" />
@@ -127,7 +156,7 @@ export const StickyScroll = ({
       {data[activeCard].isImage ? (
         <button
           type="button"
-          onClick={() => setLightboxOpen(true)}
+          onClick={() => setLightboxContent(data[activeCard].content)}
           aria-label="Expand image"
           className="group hidden lg:block w-80 rounded-md sticky top-10 cursor-zoom-in overflow-hidden ring-offset-2 ring-offset-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-300"
         >
@@ -155,7 +184,7 @@ export const StickyScroll = ({
       {mounted &&
         createPortal(
           <AnimatePresence>
-            {lightboxOpen && (
+            {lightboxContent && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -178,7 +207,7 @@ export const StickyScroll = ({
                   transition={{ type: 'spring', duration: 0.35, bounce: 0.15 }}
                   className="relative flex max-h-[90vh] max-w-[92vw] cursor-zoom-out items-center justify-center [&_img]:!h-auto [&_img]:!max-h-[90vh] [&_img]:!w-auto [&_img]:!max-w-[92vw] [&_img]:rounded-lg [&_img]:!object-contain"
                 >
-                  {data[activeCard].content ?? null}
+                  {lightboxContent}
                 </motion.div>
               </motion.div>
             )}

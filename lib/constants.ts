@@ -2,16 +2,19 @@ import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import {
   SiAmazonaws,
+  SiDocker,
+  SiExpress,
   SiFramer,
-  SiGo,
+  SiGit,
   SiHtml5,
-  SiPrisma,
+  SiLinux,
+  SiNodedotjs,
   SiTailwindcss,
   SiTypescript,
-  SiZod,
   SiZig,
 } from "react-icons/si";
 import { FaGolang } from "react-icons/fa6";
+import { Waypoints } from "lucide-react";
 import React from "react";
 
 export const COMMON_FRONTEND_TECH = ["Tailwind CSS", "Framer Motion"];
@@ -22,8 +25,20 @@ export const tech = [
     icon: React.createElement(SiTypescript, { color: "#3178C6", size: "100%" }),
   },
   {
+    label: "Node.js",
+    icon: React.createElement(SiNodedotjs, { color: "#5FA04E", size: "100%" }),
+  },
+  {
     label: "Go",
     icon: React.createElement(FaGolang, { color: "#00ADD8", size: "100%" }),
+  },
+  {
+    label: "Zig",
+    icon: React.createElement(SiZig, { color: "#F7A41D", size: "100%" }),
+  },
+  {
+    label: "Express",
+    icon: React.createElement(SiExpress, { color: "#9CA3AF", size: "100%" }),
   },
   {
     label: "React",
@@ -31,7 +46,27 @@ export const tech = [
   },
   {
     label: "Next.JS",
-    icon: React.createElement(RiNextjsFill, { color: "#FFF00", size: "100%" }),
+    icon: React.createElement(RiNextjsFill, { color: "#FFFFFF", size: "100%" }),
+  },
+  {
+    label: "Docker",
+    icon: React.createElement(SiDocker, { color: "#2496ED", size: "100%" }),
+  },
+  {
+    label: "Git",
+    icon: React.createElement(SiGit, { color: "#F05032", size: "100%" }),
+  },
+  {
+    label: "Linux",
+    icon: React.createElement(SiLinux, { color: "#FCC624", size: "100%" }),
+  },
+  {
+    label: "AWS",
+    icon: React.createElement(SiAmazonaws, { color: "#FF9900", size: "100%" }),
+  },
+  {
+    label: "LangChain",
+    icon: React.createElement(Waypoints, { color: "#4B9E91", size: "100%" }),
   },
   {
     label: "Tailwind",
@@ -41,27 +76,11 @@ export const tech = [
     }),
   },
   {
-    label: "HTML5",
-    icon: React.createElement(SiHtml5, { color: "#E34F26", size: "100%" }),
-  },
-  {
-    label: "Zod",
-    icon: React.createElement(SiZod, { color: "#FF0000", size: "100%" }),
-  },
-  {
     label: "Framer Motion",
     icon: React.createElement(SiFramer, { color: "#0055FF", size: "100%" }),
   },
   {
-    label: "AWS",
-    icon: React.createElement(SiAmazonaws, { color: "#FF9900", size: "100%" }),
-  },
-  {
-    label: "Prisma",
-    icon: React.createElement(SiPrisma, { color: "#2D3748", size: "100%" }),
-  },
-  {
-    label: "Zig",
-    icon: React.createElement(SiZig, { color: "#F7A41D", size: "100%" }),
+    label: "HTML5",
+    icon: React.createElement(SiHtml5, { color: "#E34F26", size: "100%" }),
   },
 ];
