@@ -33,7 +33,6 @@ import zig2d2 from "@/assets/zig2d_2.gif";
 import zwag1 from "@/assets/zwag_1.png";
 import zwag2 from "@/assets/zwag_2.png";
 import zixelHero from "@/assets/zixel-hero.gif";
-import zixelFeatures from "@/assets/zixel-features.png";
 import zixelInstall from "@/assets/zixel-install.png";
 
 // ---------------------------------------------------------------------------
@@ -87,8 +86,8 @@ const projects: Project[] = [
     tagline: "2D game runtime and editor in Zig",
     status: { label: "Open source · docs live", tone: "live" },
     description:
-      "A 2D game runtime and editor I'm writing in Zig: scenes, entities, rigid-body physics, shape rendering, input, and grid navigation, in a codebase small enough to read. It ships with a project CLI, an early-stage editor, seven runnable samples, and a docs site with a one-line installer.",
-    tech: ["Zig", "React", "TypeScript", "Vite", "Tailwind"],
+      "A 2D game runtime and editor I'm writing in Zig. It started as a rigid-body physics engine I built from scratch to understand how physics engines actually work, and grew into a full runtime: scenes, entities, physics, shape rendering, input, and grid navigation, in a codebase small enough to read. It ships with a project CLI, an early-stage editor, seven runnable samples, and a docs site with a one-line installer.",
+    tech: ["Zig", "sokol"],
     links: [
       {
         label: "Source",
@@ -111,10 +110,18 @@ const projects: Project[] = [
         animated: true,
       },
       {
-        src: zixelFeatures,
-        alt: "Zixel feature grid: scenes, entities, physics, rendering, navigation, and tools",
-        caption: "what's in the box",
-        bg: "#0A0908",
+        src: zig2d1,
+        alt: "Zixel physics collision demo",
+        caption: "collisions",
+        bg: "#4D5600",
+        animated: true,
+      },
+      {
+        src: zig2d2,
+        alt: "Zixel physics debug visualization",
+        caption: "debug overlay",
+        bg: "#4D5600",
+        animated: true,
       },
       {
         src: zixelInstall,
@@ -126,21 +133,27 @@ const projects: Project[] = [
     highlights: [
       {
         title: "Engine in plain Zig",
-        media: 1,
-        description:
-          "Scenes are plain Zig structs in a tree that drives update and render. Entities live in a world behind generational handles, and a fixed 60 Hz step runs rigid-body physics for circles and rotated rectangles, with friction, restitution, and sleeping.",
-      },
-      {
-        title: "One-line install",
-        media: 2,
-        description:
-          "A POSIX shell installer, served by the docs site, clones the engine, checks your Zig against the version the engine declares, builds it, and links the zixel CLI and editor onto your PATH. zixel new then scaffolds a game that opens a window.",
-      },
-      {
-        title: "Animated docs site",
         media: 0,
         description:
-          "The docs are a React and Vite site on Railway. The hero is a hand-written canvas animation: bolts take right-angled routes along the grid into the core, and every eighth arrival discharges a shockwave back out through it.",
+          "Scenes are plain Zig structs in a tree that drives update and render. Entities live in a world behind generational handles, with immediate-mode shape rendering, input, and A* grid navigation on top.",
+      },
+      {
+        title: "Rigid-body physics from scratch",
+        media: 1,
+        description:
+          "No physics libraries. Collision detection with the Separating Axis Theorem and impulse-based resolution handle circles and rotated rectangles, with static, kinematic, and dynamic bodies, friction, restitution, and sleeping on a fixed 60 Hz step.",
+      },
+      {
+        title: "Real-time debug visualization",
+        media: 2,
+        description:
+          "Visual debugging shows contact points, velocity vectors, and collision normals, which was a lifesaver when things weren't working right.",
+      },
+      {
+        title: "Docs and one-line install",
+        media: 3,
+        description:
+          "The docs site serves a POSIX shell installer that clones the engine, checks your Zig version, builds it, and links the zixel CLI and editor onto your PATH. zixel new then scaffolds a game that opens a window.",
       },
     ],
   },
@@ -304,58 +317,6 @@ const projects: Project[] = [
         media: 3,
         description:
           "A light sketchbook look with hand-drawn doodles on the landing page, plus accounts with sign-up and sign-in.",
-      },
-    ],
-  },
-  {
-    id: "physics",
-    title: "2D Physics Engine",
-    tagline: "Rigid-body physics from scratch in Zig",
-    status: { label: "Open source", tone: "oss" },
-    description:
-      "A rigid-body physics engine written from scratch in Zig with raylib. It handles gravity, collisions, and objects coming to rest, using the Separating Axis Theorem for collision detection. I wanted to understand how physics engines actually work under the hood.",
-    tech: ["Zig", "raylib"],
-    links: [
-      {
-        label: "Source",
-        href: "https://github.com/AjStraight619/Zig2DEngine",
-        kind: "github",
-      },
-    ],
-    accent: "#84CC16",
-    media: [
-      {
-        src: zig2d1,
-        alt: "Physics engine collision demo",
-        caption: "collisions",
-        bg: "#4D5600",
-        animated: true,
-      },
-      {
-        src: zig2d2,
-        alt: "Physics engine debug visualization",
-        caption: "debug overlay",
-        bg: "#4D5600",
-        animated: true,
-      },
-    ],
-    highlights: [
-      {
-        title: "Impulse-based collisions",
-        media: 0,
-        description:
-          "Collision detection with the Separating Axis Theorem and impulse-based resolution handle bouncing, friction, and objects coming to rest across different shapes.",
-      },
-      {
-        title: "Real-time debug visualization",
-        media: 1,
-        description:
-          "Visual debugging shows contact points, velocity vectors, and collision normals, which was a lifesaver when things weren't working right.",
-      },
-      {
-        title: "No physics libraries",
-        description:
-          "Everything is written from scratch in Zig, which made it a great way to learn both low-level programming and the math behind physics simulation.",
       },
     ],
   },
