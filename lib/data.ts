@@ -1,73 +1,123 @@
-import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
+export type ExperienceKind =
+  | "work"
+  | "teaching"
+  | "education"
+  | "research"
+  | "freelance";
 
-export const experiencesData = [
-  {
-    title: "B.S. Computer Science",
-    subtitle: "San Diego State University, Major GPA: 3.8",
-    location: "San Diego, CA",
-    description:
-      "Graduated with a Bachelor’s degree in Computer Science from San Diego State University, maintaining a 3.8 Major GPA. Named to the Dean’s List three times.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2021 - 2025",
-  },
-  {
-    title: "Computer Science Tutor",
-    subtitle: "Southwestern College",
-    location: "Chula Vista, CA",
-    description:
-      "Provided tutoring support to computer science students at Southwestern College, assisting with programming assignments and projects. Conducted workshops on various programming languages and topics to enhance student understanding.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2021 - 2022",
-  },
-  {
-    title: "Research Assistant",
-    subtitle: "San Diego State University",
-    location: "San Diego, CA",
-    description:
-      "Contributed to a research project at San Diego State University focused on optimizing data rates for a Non-Orthogonal Multiple Access (NOMA) system. Utilized Python and MATLAB for data analysis and simulations.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2023",
-  },
+export type Experience = {
+  title: string;
+  org: string;
+  location: string;
+  date: string;
+  kind: ExperienceKind;
+  current?: boolean;
+  summary?: string;
+  metrics?: { value: string; label: string }[];
+  groups?: { name: string; status?: string; bullets: string[] }[];
+  bullets?: string[];
+  tech?: string[];
+};
 
+// Most recent first.
+export const experiencesData: Experience[] = [
   {
-    title: "Frontend Developer Intern",
-    subtitle: "AcademicAssist",
+    title: "Software Engineer",
+    org: "Sansay Inc.",
     location: "San Diego, CA",
-    description:
-      "Serving as a frontend developer intern at AcademicAssist, leading the redesign of the landing page and implementing new features to enhance the functionality of the web app.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2024",
-  },
-
-  {
-    title: "Freelance Full-Stack Engineer",
-    subtitle: "Oak Outlet Plus",
-    location: "San Diego, CA",
-    description:
-      "Designed and developed a full-stack website for Oak Outlet Plus, a local business, using React, Next.js, TypeScript, Tailwind, Framer Motion, and S3 for file storage.",
-    icon: React.createElement(FaReact),
-    date: "2024",
+    date: "June 2025 - Present",
+    kind: "work",
+    current: true,
+    summary:
+      "Sole engineer behind Sansay\u2019s AI support agent, used in production by customers and internal support engineers, and a telecom fraud-detection system currently in development.",
+    metrics: [
+      { value: "977 \u2192 61 ms", label: "median call processing, JS workers to Go" },
+      { value: "~500M", label: "call records aggregated per month" },
+      { value: "800+", label: "technical docs in the RAG index" },
+    ],
+    groups: [
+      {
+        name: "AI Support Agent",
+        bullets: [
+          "Built and deployed a production AI support agent in TypeScript, using LangGraph for agentic orchestration and self-hosted LLMs served with vLLM, used to diagnose telecom issues.",
+          "Integrated the agent into VSXi, Sansay\u2019s main product, using Java 8 Servlets.",
+          "Designed a tool layer of read-only tools that query live customer systems, replacing manual checks and documentation searches during troubleshooting.",
+          "Built a hybrid RAG pipeline over 800+ technical documents and thousands of past support tickets, combining full-text search, vector search, and a reranking model.",
+          "Automated SIP Message Conversion profile creation, replacing a multi-hour manual process that support ran several times a week.",
+        ],
+      },
+      {
+        name: "Fraud Detection System",
+        status: "In development",
+        bullets: [
+          "Architecting a telecom fraud-detection system in Go that scores live call metadata against aggregated historical records and exposes results through a REST API.",
+          "Built a pipeline that aggregates ~500M call records per month by customer and carrier to drive false answer supervision (FAS) detection and anomaly scoring.",
+          "Rewrote call processing from JavaScript workers to Go goroutines, cutting median processing time from 977 ms to 61 ms on an 80,000-active-call benchmark.",
+        ],
+      },
+    ],
+    tech: ["TypeScript", "LangGraph", "vLLM", "Go", "Java", "RAG"],
   },
   {
     title: "Teaching Assistant",
-    subtitle: "San Diego State University",
+    org: "San Diego State University",
     location: "San Diego, CA",
-    description:
-      "Served as a Teaching Assistant for the Data Structures & Algorithms course at San Diego State University, holding office hours, leading review sessions, and helping students work through assignments and core concepts.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2024 - 2025",
+    date: "Aug 2024 - May 2025",
+    kind: "teaching",
+    summary: "Data Structures & Algorithms",
+    bullets: [
+      "Led tutoring sessions on data structures, graph traversal, and complexity analysis for students at varied levels.",
+      "Graded assignments and exams with feedback on code correctness and algorithmic reasoning.",
+    ],
   },
   {
-    title: "Software Engineer",
-    subtitle: "Sansay Inc",
-    location: "La Jolla, San Diego, CA",
-    description:
-      "Building an AI support agent (LangGraph/Node.js) that automates telecom configuration for Sansay’s VSXi platform through internal system integration, schema validation, and real-time simulation. Developing a hybrid search and ranking system over internal documentation and support tickets using full-text search, vector search, and neural reranking to improve answer quality. Improving backend integration, data flow, and reliability across legacy and modern parts of a production support platform.",
-    icon: React.createElement(CgWorkAlt),
-    date: "June 2025 - Present",
+    title: "B.S. Computer Science",
+    org: "San Diego State University",
+    location: "San Diego, CA",
+    date: "2021 - May 2025",
+    kind: "education",
+    metrics: [
+      { value: "3.8", label: "major GPA" },
+      { value: "3x", label: "Dean\u2019s List" },
+    ],
+  },
+  {
+    title: "Freelance Full-Stack Engineer",
+    org: "Oak Outlet Plus",
+    location: "San Diego, CA",
+    date: "2024",
+    kind: "freelance",
+    summary:
+      "Designed and built a full-stack website for a local business, with S3 for file storage.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion", "AWS"],
+  },
+  {
+    title: "Frontend Developer Intern",
+    org: "AcademicAssist",
+    location: "San Diego, CA",
+    date: "2024",
+    kind: "work",
+    summary:
+      "Led the redesign of the landing page and shipped new features for the web app.",
+  },
+  {
+    title: "Research Assistant",
+    org: "San Diego State University",
+    location: "San Diego, CA",
+    date: "2023",
+    kind: "research",
+    summary:
+      "Optimized non-orthogonal multiple access (NOMA) systems with intelligent reflecting surfaces (IRS), using the BFGS algorithm to improve data rates. Ran the analysis and simulations in Python and MATLAB.",
+    tech: ["Python", "MATLAB"],
+  },
+  {
+    title: "Computer Science Tutor",
+    org: "Southwestern College",
+    location: "Chula Vista, CA",
+    date: "2021 - 2022",
+    kind: "teaching",
+    summary:
+      "Tutored computer science students through programming assignments and projects, and ran workshops on programming languages and core topics.",
   },
 ];
 

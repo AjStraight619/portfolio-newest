@@ -56,9 +56,9 @@ const Intro = () => {
         <span className="underline text-purple-300 underline-offset-2">
           AI support agent
         </span>{" "}
-        and a hybrid search platform for a telecom product with{" "}
+        and a telecom fraud-detection system with{" "}
         <span className="underline text-purple-300 underline-offset-2">
-          Node.js
+          TypeScript
         </span>
         ,{" "}
         <span className="underline text-purple-300 underline-offset-2">Go</span>
