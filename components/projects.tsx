@@ -32,6 +32,9 @@ import zig2d1 from "@/assets/zig2d_1.gif";
 import zig2d2 from "@/assets/zig2d_2.gif";
 import zwag1 from "@/assets/zwag_1.png";
 import zwag2 from "@/assets/zwag_2.png";
+import zixelHero from "@/assets/zixel-hero.gif";
+import zixelFeatures from "@/assets/zixel-features.png";
+import zixelInstall from "@/assets/zixel-install.png";
 
 // ---------------------------------------------------------------------------
 // Data
@@ -78,6 +81,69 @@ type Project = {
 };
 
 const projects: Project[] = [
+  {
+    id: "zixel",
+    title: "Zixel",
+    tagline: "2D game runtime and editor in Zig",
+    status: { label: "Open source · docs live", tone: "live" },
+    description:
+      "A 2D game runtime and editor I'm writing in Zig: scenes, entities, rigid-body physics, shape rendering, input, and grid navigation, in a codebase small enough to read. It ships with a project CLI, an early-stage editor, seven runnable samples, and a docs site with a one-line installer.",
+    tech: ["Zig", "React", "TypeScript", "Vite", "Tailwind"],
+    links: [
+      {
+        label: "Source",
+        href: "https://github.com/AjStraight619/zixel",
+        kind: "github",
+      },
+      {
+        label: "Docs site",
+        href: "https://zixel-docs-production.up.railway.app",
+        kind: "live",
+      },
+    ],
+    accent: "#F97316",
+    media: [
+      {
+        src: zixelHero,
+        alt: "Zixel docs landing page, with electric bolts running along a grid into the Zixel core",
+        caption: "landing page",
+        bg: "#0A0908",
+        animated: true,
+      },
+      {
+        src: zixelFeatures,
+        alt: "Zixel feature grid: scenes, entities, physics, rendering, navigation, and tools",
+        caption: "what's in the box",
+        bg: "#0A0908",
+      },
+      {
+        src: zixelInstall,
+        alt: "Zixel install command next to the generated main.zig",
+        caption: "install",
+        bg: "#0A0908",
+      },
+    ],
+    highlights: [
+      {
+        title: "Engine in plain Zig",
+        media: 1,
+        description:
+          "Scenes are plain Zig structs in a tree that drives update and render. Entities live in a world behind generational handles, and a fixed 60 Hz step runs rigid-body physics for circles and rotated rectangles, with friction, restitution, and sleeping.",
+      },
+      {
+        title: "One-line install",
+        media: 2,
+        description:
+          "A POSIX shell installer, served by the docs site, clones the engine, checks your Zig against the version the engine declares, builds it, and links the zixel CLI and editor onto your PATH. zixel new then scaffolds a game that opens a window.",
+      },
+      {
+        title: "Animated docs site",
+        media: 0,
+        description:
+          "The docs are a React and Vite site on Railway. The hero is a hand-written canvas animation: bolts take right-angled routes along the grid into the core, and every eighth arrival discharges a shockwave back out through it.",
+      },
+    ],
+  },
   {
     id: "zwag",
     title: "zwag",
